@@ -1,0 +1,8 @@
+
+.leftBar{
+    width: 20%;
+    border-right: 1px solid black;
+    height: 894px;
+    display: inline-block;
+    position: absolute;
+}

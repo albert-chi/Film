@@ -1,0 +1,46 @@
+.main{
+    height: auto;
+    width: 100%;
+
+}
+.poster{
+  border-radius: 15px;
+}
+.backdrop{
+    position: absolute;
+    object-fit: cover;
+}
+.instruction{
+    height: auto;
+    width: 1000px;
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 550px;
+}
+.poster_box{
+    height: 700px;
+    width: 400px;
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 50px;
+    border-radius: 15px;
+}
+.poster_box p{
+    margin:15px;
+}
+.instruction h1{
+    color: #D45858;
+    margin:15px;
+}
+.instruction p{
+    text-align: center;
+    margin:15px;
+}
+.FavouriteButton{
+    padding:10px;
+    background-color: #D45858;
+    margin:2px 3px 15px 15px;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
