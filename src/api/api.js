@@ -3,7 +3,7 @@
 import { BASE_URL, apikey , Path_Discover} from "./contact";
 
 export const DiscoverMovie = (page) => {
-    return(    
+    return(
         fetch (`${BASE_URL}${Path_Discover}?api_key=${apikey}&page=${page}`)
         .then((res) => res.json())
     )
@@ -19,21 +19,21 @@ export const PostDataFavourite = (movie) => {
     return(
         fetch(` http://localhost:5000/posts`, {
             method: 'POST',
-            mode: 'cors', 
+            mode: 'cors',
             cache: 'no-cache',
-            credentials: 'same-origin', 
+            credentials: 'same-origin',
             headers: {
               'Content-Type': 'application/json'
             },
             redirect: 'follow',
             referrerPolicy: 'no-referrer',
-            body: JSON.stringify(movie) 
+            body: JSON.stringify(movie)
           })
     )
 }
 
 export const SearchApi = (query) => {
-    
+
     return(
         fetch(`${BASE_URL}/search/movie/?api_key=${apikey}&query=${query}`)
         .then((res) => res.json())
@@ -41,6 +41,7 @@ export const SearchApi = (query) => {
 }
 
 export const PopularFilm = () => {
+    // Todo: Add pagination
     return(
         fetch (`${BASE_URL}${Path_Discover}?api_key=${apikey}&sort_by=popularity.desc`)
         .then((res) => res.json())

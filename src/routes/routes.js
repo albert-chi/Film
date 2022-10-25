@@ -10,11 +10,12 @@ import {
     Routes,
     Route
   } from "react-router-dom";
-  
+
 
 const MainRoutes = () => {
     return(
         <Routes>
+          {/*Todo: Reformat to <Route />*/}
             <Route  path = "/" element = {<Home />}></Route>
             <Route path = "films" element = {<Films />}></Route>
             <Route path='films/viewpage/:id' element = {<Page />}></Route>
@@ -22,6 +23,7 @@ const MainRoutes = () => {
             <Route path = "Category/Avarage" element = {<Avarage />}></Route>
             <Route path = "Favourite" element = {<Favourite />}></Route>
             <Route path = "Search" element = {<Search />} ></Route>
+          {/*Todo: Reformat to <Route /> / End*/}
         </Routes>
     )
 }

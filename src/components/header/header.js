@@ -8,7 +8,7 @@ import Search from "./search/search";
 const Header = (props) => {
     const data = [];
     const navigate = useNavigate();
-    console.log(data);
+    console.log(data); //Todo: Remove console.log
     return (
         <>
             <div className="header">
@@ -27,10 +27,13 @@ const Header = (props) => {
                         </div>
                     </ul>
                 </nav>
+                {/*Todo: Reformat*/}
                 <div className="search-bar"><input type="search" placeholder="search"  className="search_input" onChange={(e) =>{
                         data.push(e.target.value)
                         navigate('/Search' , {state:{data}})
+                        // Todo: Amen angam vor navigate es anum, borwser-i history-i mej a lcvum, u back vor anum es eli search eji vraya mnum
                 } }/></div>
+                {/*Todo: Reformat / End*/}
             </div>
        </>
     );
