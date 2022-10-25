@@ -40,10 +40,9 @@ export const SearchApi = (query) => {
     )
 }
 
-export const PopularFilm = () => {
-    // Todo: Add pagination
+export const PopularFilm = (page) => {
     return(
-        fetch (`${BASE_URL}${Path_Discover}?api_key=${apikey}&sort_by=popularity.desc`)
+        fetch (`${BASE_URL}${Path_Discover}?api_key=${apikey}&page=${page}&sort_by=popularity.desc`)
         .then((res) => res.json())
     )
 }

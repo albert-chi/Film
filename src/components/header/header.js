@@ -1,14 +1,12 @@
 import React from "react";
-import  ReactDOM from 'react-dom';
 import './header.css';
 import logo from "../images/logo.jpg"
-import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import Search from "./search/search";
-const Header = (props) => {
+
+const Header = () => {
     const data = [];
     const navigate = useNavigate();
-    console.log(data); //Todo: Remove console.log
+   
     return (
         <>
             <div className="header">
@@ -27,12 +25,13 @@ const Header = (props) => {
                         </div>
                     </ul>
                 </nav>
-                {/*Todo: Reformat*/}
-                <div className="search-bar"><input type="search" placeholder="search"  className="search_input" onChange={(e) =>{
-                        data.push(e.target.value)
-                        navigate('/Search' , {state:{data}})
-                        // Todo: Amen angam vor navigate es anum, borwser-i history-i mej a lcvum, u back vor anum es eli search eji vraya mnum
-                } }/></div>
+                {/*Todo: Reformat*/} 
+                    <div className="search-bar">
+                        <input type="search" placeholder="search"  className="search_input" onChange={(e) =>{
+                            data.push(e.target.value)
+                            navigate('/Search' , {state:{data}})
+                    }}/>
+                    </div>
                 {/*Todo: Reformat / End*/}
             </div>
        </>

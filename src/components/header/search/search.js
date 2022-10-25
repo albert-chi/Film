@@ -1,5 +1,5 @@
 import react from 'react';
-import { useLocation,useNavigate } from 'react-router-dom';
+import { useLocation,useNavigate, Link } from 'react-router-dom';
 import { useEffect , useState} from 'react';
 import "../../content/films/films.css";
 import { SearchApi } from '../../../api/api';
@@ -35,16 +35,18 @@ const Search = () =>{
                 searchData.map((resSearchData) => {
                     return(
                         <>
-                          <div className="discover_card" href = "/films/viewpage" onClick={() => navigate(`/films/viewpage/${resSearchData.id}` , resSearchData.id)}>
-                            <div className="cards">
-                                <div className="image-box">
-                                    <img src = {`http://image.tmdb.org/t/p/w500${resSearchData.poster_path}`}  width = "350" height="400"/> 
+                            <Link to="/films/viewpage">
+                                <div className="discover_card"  onClick={() => navigate(`/films/viewpage/${resSearchData.id}` , resSearchData.id)}>
+                                    <div className="cards">
+                                        <div className="image-box">
+                                            <img src = {`http://image.tmdb.org/t/p/w500${resSearchData.poster_path}`}  width = "350" height="400"/> 
+                                        </div>
+                                        <div className="content_bar">
+                                            <h3>{resSearchData.original_title}</h3>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="content_bar">
-                                    <h3>{resSearchData.original_title}</h3>
-                                </div>
-                            </div>
-                        </div>
+                            </Link>
                         </>
                     )
                 })

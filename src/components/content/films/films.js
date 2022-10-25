@@ -1,12 +1,11 @@
 import { React, useState, useEffect } from "react";
 import './films.css';
-import { useNavigate} from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 import { DiscoverMovie } from "../../../api/api";
 
 
 const Films = () => {
     const [filmsData, setFilmData] = useState([]);
-    // Todo: state-i anuny camelCase
     const [numberpage , setnumberpage] = useState(1);
     const navigate = useNavigate();
 
@@ -33,9 +32,10 @@ const Films = () => {
            {
             filmsData.map((resultDisc) => {
                 return (
-                    <>
-                      {/*Todo: div-y to props chuni*/}
-                        <div className="discover_card" to = "/films/viewpage" onClick={() => navigate(`/films/viewpage/${resultDisc.id}` , resultDisc.id)}>
+                <>
+                     <Link  to="/films/viewpage" >
+                        
+                        <div className="discover_card" onClick={() => navigate(`/films/viewpage/${resultDisc.id}` , resultDisc.id)}>
                             <div className="cards">
                                 <div className="image-box">
                                     <img src = {`http://image.tmdb.org/t/p/w500${resultDisc.poster_path}`}  width = "350" height="400"/>
@@ -45,7 +45,8 @@ const Films = () => {
                                 </div>
                             </div>
                         </div>
-                    </>
+                    </Link>  
+                </>
                 );
             })
            }

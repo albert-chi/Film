@@ -6,7 +6,6 @@ import {PostDataFavourite} from  '../../../../api/api';
 import './page.css';
 
 const Page = () => {
-    // Todo: camelCase
     const [movie , setmovie] = useState([]);
     let { id } = useParams();
 
@@ -27,9 +26,9 @@ const Page = () => {
         <div className="main">
 
             <div>
-                <img  src = {`http://image.tmdb.org/t/p/w500${movie.backdrop_path}`}  className = "backdrop" width = "100%" height="500"/>
+                <img  src = {`http://image.tmdb.org/t/p/w500${movie.backdrop_path}`}  className="backdrop" width="100%" height="500"/>
                 <div className="poster_box">
-                    <img  src = {`http://image.tmdb.org/t/p/w500${movie.poster_path}`} className = "poster" height = "500" width="400"/>
+                    <img  src = {`http://image.tmdb.org/t/p/w500${movie.poster_path}`} className = "poster" height="500" width="400"/>
                     <p>original lenguage : {movie.original_language}</p>
                     <p>popularity : {movie.popularity}</p>
                     <p>release date : {movie.release_date}</p>
